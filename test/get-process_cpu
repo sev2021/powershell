@@ -1,0 +1,15 @@
+  ### Powershel test:
+
+foreach($procin in get-process){
+
+  ### (get-process).cpu is empty for some of processes
+  ### to have nice looking list it is set-up as "none" first
+  ### then it is changed into real CPU number if available
+
+  $cpuid = "none"
+  if($procin.cpu){$cpuid = $procin.cpu}
+  write-host $procin " `t`t`t Memory use = " $cpuid
+
+  ### 3 tab signs above to align results nicely (`t)
+
+}
