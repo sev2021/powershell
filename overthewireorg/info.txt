@@ -9,7 +9,7 @@ cvX2JJa4CFALtqS87jk27qwqGhBM9plV
 UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
 truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
 IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
-5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e (ssh bandit14@localhost -i sshkey.private)
 BfMYroe26WYalil77FoDi9qh59eK5xNr
@@ -18,3 +18,9 @@ xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn
 kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd "cat readme"
 IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
 GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
