@@ -1,0 +1,11 @@
+###########################################  FROM  ###############################################
+https://social.technet.microsoft.com/Forums/lync/en-US/5ad656a5-fe70-477f-a608-0e588096f227/how-to-get-mailbox-folder-permissions-to-all-mailbox-folders-in-all-mailboxes
+##################################################################################################
+
+$SpecialExchangeFolders = "Top of Information Store|Recoverable Items|Deletions|Purges|Versions"
+$CurrentUser = gci env:username | % { $_.value }
+[string[]] $FolderPaths = Get-MailboxfolderStatistics $CurrentUser | % {$_.folderpath}
+$ExchangeFolderPaths = $FolderPaths | % {$CurrentUser + ":" + $_.replace('/','\')}
+$UsableExchangeFolderPaths = $ExchangeFolderPaths | where { $_ -notmatch $SpecialExchangeFolders }
+$UsableExchangeFolderPaths | % { get-mailboxfolder $_ }
+$UsableExchangeFolderPaths | % { get-mailboxfolderPermission $_ } 
