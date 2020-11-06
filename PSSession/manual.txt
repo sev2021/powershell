@@ -1,4 +1,4 @@
-$credential=Get-Credential             Admin_2019
+$credential=Get-Credential
 
 $option = New-PSSessionOption -IdleTimeout 600000 -OpenTimeout 1200000
 
