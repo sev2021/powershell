@@ -1,0 +1,13 @@
+$credential=Get-Credential
+
+$option = New-PSSessionOption -IdleTimeout 600000 -OpenTimeout 1200000
+
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $credential -Authentication Basic -SessionOption $option
+
+Import-PSSession $Session -AllowClobber
+
+--------------------------------------------------- CONFIRM USERS USING SOMEONE ELSE MAILBOX / EMAIL
+
+Get-RecipientPermission
+
+Add-RecipientPermission "group_name@domain.com" -AccessRights SendAs -trustee "real_user@domain.com" -Confirm:$false
