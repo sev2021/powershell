@@ -1,12 +1,24 @@
+################################  RUN NEXT 3 LINES ONE AFTER ANOTHER (use admin user as credentials)
 $credential=Get-Credential
-
 $option = New-PSSessionOption -IdleTimeout 600000 -OpenTimeout 1200000
-
 $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $credential -Authentication Basic -SessionOption $option
 
+########################################### THIS IS ALSO IMPORTANT - IT SHOWS "session name"
 Import-PSSession $Session -AllowClobber
 
 ---------------------------------------------------
+###################  GET ALL AVAILABLE COMMANDS USING cmdlet ES BELOW ############################
+PS C:\> (Get-Module -Name tmp_yymyrw19ce.guj).ExportedCommands | ft key
+###################   "session name" ^^ tmp_yymyrw19e.guj  from    Import-PSSession  ########
+##################################################################################################
+###################  other way to get "session name" (last row) :
 
-PS C:\> (Get-Module -Name tmp_ytfbj4ce.guj).ExportedCommands | ft key
-###################   ^^ tmp_ytfbj4ce.guj  from    Import-PSSession  #############################
+PS C:\> Get-Module
+ModuleType Version    Name                                ExportedCommands                                              
+---------- -------    ----                                ----------------                                              
+Manifest   1.0.0.0    ActiveDirectory                     {Add-ADCentralAccessPolicyMember, Add-ADComputerServiceAcco...
+Script     1.0.0.0    ISE                                 {Get-IseSnippet, Import-IseSnippet, New-IseSnippet}           
+Manifest   3.1.0.0    Microsoft.PowerShell.Management     {Add-Computer, Add-Content, Checkpoint-Computer, Clear-Cont...
+Manifest   3.0.0.0    Microsoft.PowerShell.Security       {ConvertFrom-SecureString, ConvertTo-SecureString, Get-Acl,...
+Manifest   3.1.0.0    Microsoft.PowerShell.Utility        {Add-Member, Add-Type, Clear-Variable, Compare-Object...}     
+Script     1.0        tmp_ymyrw19p.8p1                    {Add-AvailabilityAddressSpace, Add-DistributionGroupMember,.
