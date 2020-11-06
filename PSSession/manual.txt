@@ -22,3 +22,73 @@ Manifest   3.1.0.0    Microsoft.PowerShell.Management     {Add-Computer, Add-Con
 Manifest   3.0.0.0    Microsoft.PowerShell.Security       {ConvertFrom-SecureString, ConvertTo-SecureString, Get-Acl,...
 Manifest   3.1.0.0    Microsoft.PowerShell.Utility        {Add-Member, Add-Type, Clear-Variable, Compare-Object...}     
 Script     1.0        tmp_ymyrw19p.8p1                    {Add-AvailabilityAddressSpace, Add-DistributionGroupMember,.
+
+###################################################################################################
+#############################  get all user mailbox subfolders and information  ####################
+PS C:\> Get-MailboxFolderStatistics user_name | select name, folderpath, ItemsInFolderAndSubfolders
+################### optional infos: 
+RunspaceId                        : a88888888888888888888888888888888888f
+Date                              : 27/11/2017 11:19:07
+CreationTime                      : 27/11/2017 11:19:07
+LastModifiedTime                  : 03/11/2020 18:05:40
+Name                              : Junk Email
+FolderPath                        : /Junk Email
+FolderId                          : L8888888888888888888888888888888888888888888888V/H8888888888888B
+ParentFolderId                    : L8888888888888888888888888888888888888888888888V/H8888888888888B
+FolderType                        : JunkEmail
+ContentFolder                     : True
+ContentMailboxGuid                : 98888888888888888888888888888888888c
+RawContentMailboxGuid             : 
+Movable                           : False
+RecoverableItemsFolder            : False
+AssociatedIPMFolderPath           : 
+ContainerClass                    : 
+Flags                             : 
+TargetQuota                       : User
+StorageQuota                      : Unlimited
+StorageWarningQuota               : Unlimited
+VisibleItemsInFolder              : 49
+HiddenItemsInFolder               : 0
+ItemsInFolder                     : 49
+DeletedItemsInFolder              : 0
+FolderSize                        : 2.399 MB (2,515,761 bytes)
+ItemsInFolderAndSubfolders        : 49
+DeletedItemsInFolderAndSubfolders : 0
+FolderAndSubfolderSize            : 2.399 MB (2,515,761 bytes)
+CurrentSchemaVersion              : 1.50
+OldestItemReceivedDate            : 
+NewestItemReceivedDate            : 
+OldestDeletedItemReceivedDate     : 
+NewestDeletedItemReceivedDate     : 
+OldestItemLastModifiedDate        : 
+NewestItemLastModifiedDate        : 
+OldestDeletedItemLastModifiedDate : 
+NewestDeletedItemLastModifiedDate : 
+ManagedFolder                     : 
+DeletePolicy                      : 
+ArchivePolicy                     : 
+CompliancePolicy                  : 
+RetentionFlags                    : 
+TopSubject                        : 
+TopSubjectSize                    : 0 B (0 bytes)
+TopSubjectCount                   : 0
+TopSubjectClass                   : 
+TopSubjectPath                    : 
+TopSubjectReceivedTime            : 
+TopSubjectFrom                    : 
+TopClientInfoForSubject           : 
+TopClientInfoCountForSubject      : 0
+SearchFolders                     : 
+AuditAuxMailboxGuid               : 
+AuditFolderStubSize               : 
+LastMovedTimeStamp                : 
+LowLatencyContainerId             : 
+LowLatencyContainerFlags          : 
+LowLatencyContainerQuota          : Unlimited
+SearchFolder                      : False
+Identity                          : alee\Junk Email
+ConversationNamespace             : 
+Diagnostics                       : 
+DiagnosticInfo                    : 
+IsValid                           : True
+ObjectState                       : New
