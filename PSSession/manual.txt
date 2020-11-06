@@ -1,0 +1,16 @@
+$credential=Get-Credential             Admin_2019
+
+$option = New-PSSessionOption -IdleTimeout 600000 -OpenTimeout 1200000
+
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $credential -Authentication Basic -SessionOption $option
+
+Import-PSSession $Session -AllowClobber
+
+---------------------------------------------------
+$option = New-PSSessionOption -IdleTimeout 60000
+
+---------------------------------------------------
+PS C:\> (Get-Module -Name tmp_ytfbj4ce.guj).ExportedCommands | ft key
+
+
+################### tmp_ytfbj4ce.guj  from    Import-PSSession  #############################
