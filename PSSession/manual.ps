@@ -7,6 +7,10 @@ $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri ht
 Import-PSSession $Session -AllowClobber
 
 ---------------------------------------------------
+###########  read PSSession options - not changing with New-PSSessionOption for some reason ##########
+New-PSSessionOption
+
+---------------------------------------------------
 ###################  GET ALL AVAILABLE COMMANDS USING cmdlet ES BELOW ############################
 PS C:\> (Get-Module -Name tmp_yymyrw19ce.guj).ExportedCommands | ft key
 ###################   "session name" ^^ tmp_yymyrw19e.guj  from    Import-PSSession  ########
