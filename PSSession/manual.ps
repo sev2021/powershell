@@ -1,6 +1,8 @@
 ################################  RUN NEXT 3 LINES ONE AFTER ANOTHER (use admin user as credentials)
 $credential=Get-Credential
-$option = New-PSSessionOption -IdleTimeout 600000 -OpenTimeout 1200000
+## THIS IS NOT WORKING ## $option = New-PSSessionOption -IdleTimeout 600000 -OpenTimeout 1200000
+## DONT uSE "-SessionOption $option" IN below line !!! 
+
 $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $credential -Authentication Basic -SessionOption $option
 
 ########################################### THIS IS ALSO IMPORTANT - IT SHOWS "session name"
