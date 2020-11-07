@@ -1,22 +1,17 @@
 ################################  RUN NEXT 3 LINES ONE AFTER ANOTHER (use admin user as credentials)
-$credential=Get-Credential
+$credential=Get-Credential  ## THIS IS LINE (1)
 ## THIS IS NOT WORKING ## $option = New-PSSessionOption -IdleTimeout 600000 -OpenTimeout 1200000
-## DONT uSE "-SessionOption $option" IN below line !!! 
-
+## DONT uSE "-SessionOption $option" IN LINE (2) BELOW !!! 
 $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $credential -Authentication Basic -SessionOption $option
 
 ########################################### THIS IS ALSO IMPORTANT - IT SHOWS "session name"
-Import-PSSession $Session -AllowClobber
+Import-PSSession $Session -AllowClobber   ## THIS IS LINE (3)
 
 ---------------------------------------------------
-###########  read PSSession options - not changing with New-PSSessionOption for some reason ##########
-New-PSSessionOption
-
----------------------------------------------------
-###################  GET ALL AVAILABLE COMMANDS USING cmdlet ES BELOW ############################
+###################  GET ALL AVAILABLE COMMANDS (ExportedCommands) USING cmdlet AS BELOW ###############
+###################  W-A-R-N-I-N-G !!  AVAILABLE COMMANDS (ExportedCommands) VARY FOR DIFFERENT USERS ##
 PS C:\> (Get-Module -Name tmp_yymyrw19ce.guj).ExportedCommands | ft key
 ###################   "session name" ^^ tmp_yymyrw19e.guj  from    Import-PSSession  ########
-##################################################################################################
 ###################  other way to get "session name" (last row) :
 
 PS C:\> Get-Module
@@ -31,7 +26,10 @@ Script     1.0        tmp_ymyrw19p.8p1                    {Add-AvailabilityAddre
 
 ###################################################################################################
 #############################  get all user mailbox subfolders and information  ####################
+###################  W-A-R-N-I-N-G !! "Get-MailboxFolderStatistics" is avaiable only to admins! ##
+
 PS C:\> Get-MailboxFolderStatistics user_name | select name, folderpath, ItemsInFolderAndSubfolders
+
 ################### optional infos: 
 RunspaceId                        : a88888888888888888888888888888888888f
 Date                              : 27/11/2017 11:19:07
