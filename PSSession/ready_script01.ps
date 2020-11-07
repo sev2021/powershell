@@ -1,9 +1,11 @@
-###########################################  FROM  ###############################################
-https://social.technet.microsoft.com/Forums/lync/en-US/5ad656a5-fe70-477f-a608-0e588096f227/how-to-get-mailbox-folder-permissions-to-all-mailbox-folders-in-all-mailboxes
-##################################################################################################
+################################  FIRST USE  TO CONNECT TO 365  ##################################
+$credential=Get-Credential
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $credential -Authentication Basic
+Import-PSSession $Session -AllowClobber
+################################  THEN START WITH LINE 1 and 3 BELOW  ###################################
 
 $SpecialExchangeFolders = "Top of Information Store|Recoverable Items|Deletions|Purges|Versions"
-$CurrentUser = gci env:username | % { $_.value }  ## this is only extracting username like "John Fox" 
+$CurrentUser = Get-Children env:username | % { $_.value }  ## this is only extracting username like "John Fox" 
 [string[]] $FolderPaths = Get-MailboxfolderStatistics $CurrentUser | % {$_.folderpath}
 $ExchangeFolderPaths = $FolderPaths | % {$CurrentUser + ":" + $_.replace('/','\')}
 $UsableExchangeFolderPaths = $ExchangeFolderPaths | where { $_ -notmatch $SpecialExchangeFolders }
@@ -42,6 +44,6 @@ $UsableExchangeFolderPaths | % { get-mailboxfolderPermission $_ }
 $UsableExchangeFolderPaths | % { add-mailboxfolderPermission $_ -User user_name -AccessRights Owner }
 
 ######################### E N D ########################
-#
-#
-#
+###########################################  FROM  ###############################################
+https://social.technet.microsoft.com/Forums/lync/en-US/5ad656a5-fe70-477f-a608-0e588096f227/how-to-get-mailbox-folder-permissions-to-all-mailbox-folders-in-all-mailboxes
+##################################################################################################
