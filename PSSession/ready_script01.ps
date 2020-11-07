@@ -24,20 +24,20 @@ $CurrentUser = gci env:username | % { $_.value }
 ###### 3 - God knows what this is doing. It reads each subfolder from mailbox and...?  #######
 [string[]] $FolderPaths = Get-MailboxfolderStatistics $CurrentUser | % {$_.folderpath}
 
-###### 4 - This is making changes to list of subfolders  ############
+###### 4 - This makes changes to list of subfolders  ################
 $ExchangeFolderPaths = $FolderPaths | % {$CurrentUser + ":" + $_.replace('/','\')}
 
 ###### 5 - This makes list of proper subolder names "user_name:\main_folder\sub_folder\etc.."  ######
 $UsableExchangeFolderPaths = $ExchangeFolderPaths | where { $_ -notmatch $SpecialExchangeFolders }
 
-###### 6 - This just list all folders - CAN BE USED ONLY BY USER-OWNER, otherwise will show error ###
+###### 6 - This just lists all folders - CAN BE USED ONLY BY USER-OWNER, otherwise will show error ###
 $UsableExchangeFolderPaths | % { get-mailboxfolder $_ }
 
 ###### 7 - This ust list of all folders and its permissions ################## 
 $UsableExchangeFolderPaths | % { get-mailboxfolderPermission $_ }
 
 ###### 8 - This is adding new user (Owner) to all subfolders. user_name needs no "@domain.com" ###############
-###### This is final and inportant part. Succesful line should show  folder_name + user_name + {Owner} #######
+###### This is final and important part. Succesful line should show  folder_name + user_name + {Owner} #######
 ###### If user already added to subfolder it should show "An existing permission entry was found for user"  ##
 $UsableExchangeFolderPaths | % { add-mailboxfolderPermission $_ -User user_name -AccessRights Owner }
 
