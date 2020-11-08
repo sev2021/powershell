@@ -21,7 +21,7 @@ $SpecialExchangeFolders = "Top of Information Store|Recoverable Items|Deletions|
 
 ###### 2 - This is only extracting username like "John Fox" #########
 ###### It can ba manually set $CurrentUser = "John Fox"  ############ 
-$CurrentUser = gci env:username | % { $_.value } 
+$CurrentUser = ....old..user..name..here.... (no @domain needed)
 
 ###### 3 - God knows what this is doing. It reads each subfolder from mailbox and...?  #######
 [string[]] $FolderPaths = Get-MailboxfolderStatistics $CurrentUser | % {$_.folderpath}
