@@ -1,0 +1,17 @@
+############ USE THIS IF YOU GET ERROR: You don't have permission to send messages from this mailbox
+############ IF GROUP DELEGATION IS SET CORRECTLY FIRST !
+
+################################  FIRST USE  TO CONNECT TO 365  ##################################
+#################### // BELOW ARE TWO (2) COMMAND LINES TO INITIATE CONNECTION ###################
+> $credential=Get-Credential
+
+> $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $credential -Authentication Basic
+Import-PSSession $Session -AllowClobber
+
+##############################  DO THESE TWO STEPS ON DISTRIBUTION GROUP
+
+> Set-DistributionGroup -Identity admissions -RequireSenderAuthenticationEnabled $true
+> Set-DistributionGroup -Identity admissions -RequireSenderAuthenticationEnabled $false
+
+>>> THIS SHOULD RESTART GROUP SETTINGS
+>>> MORE INFORMATIONS BELOW, BUT TWO STEPS ABOVE ARE CRITICAL
