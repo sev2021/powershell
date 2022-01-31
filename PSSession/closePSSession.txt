@@ -1,0 +1,9 @@
+########### To see PSSession
+
+> Get-PSSession
+
+###########  To finish PSSession
+
+> Remove-PSSession -name <your_session_name>
+
+###########  Do not use Disconnect-PSSession -name, as it doesnt close session, just disconnect
