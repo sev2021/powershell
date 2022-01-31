@@ -1,0 +1,9 @@
+####  how to get session info?
+
+> Get-PSSession
+
+####  how to finish PSSession?
+
+> Remove-PSSession -name <session_name>
+
+#### dont use Disconnect-PSSession -name <session_name>
