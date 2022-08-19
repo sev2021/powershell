@@ -1,11 +1,46 @@
-# powershell
-# windows hacks
+### Windows 10
   
-> net user  
-> net user (username) (password) /add  
->  
-> use Alt+35 for hash #
->  
->  
-> (remember to add two spacess at the end of the line here)
+  run as Admin:
+  list all users:
+  
+`net user`
+  
+  add user:
+  
+`net user (username) (password) /add`
 
+  change user password (new password prompted after Enter):
+  
+`net user (username) *`
+  
+  add Admin:
+  
+`net localgroup Administrators (username) /add`
+    
+  password expiration:
+  
+`net accouts /MAXPWAGE:unlimited`
+  
+  
+  Users console:
+  
+`lusrmgr.msc`
+  
+  
+  System Properties Advanced:
+  
+`sysdm.cpl`
+
+
+  Windows System shares:
+  
+`fsmgmt.msc`
+  
+  
+  Windows integrity check:
+  
+`DISM.exe /Online /Cleanup-image /Scanhealth  
+DISM.exe /Online /Cleanup-image /Restorehealth`
+
+  How to get # symbol if not on keyboard:
+  - press Alt and type 35 from NumLock
